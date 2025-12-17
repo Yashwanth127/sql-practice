@@ -1,0 +1,73 @@
+CREATE TABLE yashwanth (
+  Name varchar(20) PRIMARY KEY ,
+  name_id int(2),
+  course varchar(20),
+  course_id int(3)
+); 
+
+
+
+INSERT INTO yashwanth VALUES("yashwanth",01,"MCA",101);
+INSERT INTO yashwanth VALUES("yash",02,"MCA",102);
+INSERT INTO yashwanth VALUES("yashwanth Kumar S",03,"MCA",101);
+INSERT INTO yashwanth VALUES("Charan",04,"MCA",101);
+INSERT INTO yashwanth VALUES("Chithra",02,"BCA",102);
+INSERT INTO yashwanth VALUES("Chithra gowda ",04,"BCA",102);
+INSERT INTO yashwanth VALUES("Sindhu Gowda V ",10,"BCA",122);
+
+
+#Performing some Queries 
+
+-> select * from yashwanth;
+-> select course_id,name_id from yashwanth;
+-> select name , course from yashwanth ;
+
+-> select * from yashwanth
+   where course ="MCA";
+-> select * from yashwanth
+   where course_id = 101;
+
+**/ And some other i have performed to retrive the data /**
+
+AND / OR Conditions
+
+-> select  * from yashwanth
+   where course_id = 102 and course="MCA";
+
+-> select  * from yashwanth
+   where course_id = 102 or course="MCA";
+
+ORDER BY (Sorting)
+
+-> select * from yashwanth
+   order by name ;
+-> select * from yashwanth
+   order by name_id ;
+-> select * from yashwanth
+   order by name_id desc;
+
+LIMIT (Top Records)
+
+-> select * from yashwanth
+   limit 4;
+-> select * from yashwanth
+   order by name 
+   limit 2;
+
+UPDATE
+
+-> UPDATE yashwanth
+SET course = 'MBA'
+WHERE Name = 'yash';
+
+
+Delete
+-> delete from yashwanth 
+   where name = "charan";
+
+count
+
+-> SELECT COUNT(*) FROM yashwanth
+  WHERE course = 'MCA';
+
+
