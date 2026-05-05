@@ -1,0 +1,85 @@
+-- SQL Practice (Basics Only - No Joins)
+
+-- 1. View all customers
+SELECT * FROM Customers;
+
+-- 2. View selected columns
+SELECT first_name, last_name, age FROM Customers;
+
+-- 3. Customers from USA
+SELECT * FROM Customers
+WHERE country = 'USA';
+
+-- 4. Customers age greater than 25
+SELECT * FROM Customers
+WHERE age > 25;
+
+-- 5. Customers age less than or equal to 28
+SELECT * FROM Customers
+WHERE age <= 28;
+
+-- 6. Customers between age 20 and 28
+SELECT * FROM Customers
+WHERE age BETWEEN 20 AND 28;
+
+-- 7. Customers with name 'John'
+SELECT * FROM Customers
+WHERE first_name = 'John';
+
+-- 8. Sort customers by age (ascending)
+SELECT * FROM Customers
+ORDER BY age ASC;
+
+-- 9. Sort customers by age (descending)
+SELECT * FROM Customers
+ORDER BY age DESC;
+
+-- 10. Count total customers
+SELECT COUNT(*) AS total_customers FROM Customers;
+
+-- 11. Find average age
+SELECT AVG(age) AS average_age FROM Customers;
+
+-- 12. Find minimum age
+SELECT MIN(age) AS min_age FROM Customers;
+
+-- 13. Find maximum age
+SELECT MAX(age) AS max_age FROM Customers;
+
+-- 14. Count customers per country
+SELECT country, COUNT(*) AS total
+FROM Customers
+GROUP BY country;
+
+-- 15. Filter grouped data (countries with more than 1 customer)
+SELECT country, COUNT(*) AS total
+FROM Customers
+GROUP BY country
+HAVING COUNT(*) > 1;
+
+-- 16. View all orders
+SELECT * FROM Orders;
+
+-- 17. Orders with amount greater than 300
+SELECT * FROM Orders
+WHERE amount > 300;
+
+-- 18. Sort orders by amount
+SELECT * FROM Orders
+ORDER BY amount DESC;
+
+-- 19. Total order amount
+SELECT SUM(amount) AS total_amount FROM Orders;
+
+-- 20. Insert new student
+INSERT INTO Students (id, name, age)
+VALUES (5, 'Alex', 23);
+
+-- 21. Update customer country
+UPDATE Customers
+SET country = 'Canada'
+WHERE customer_id = 1;
+
+-- 22. Delete a student
+DELETE FROM Students
+WHERE id = 3;
